@@ -1,60 +1,134 @@
-# MusicStreames
+# 🎵 MusicStream – Application de Gestion et Lecture de Musique Locale
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.5.
+MusicStream est une application web développée avec **Angular 17+** permettant aux utilisateurs de gérer, organiser et écouter leur musique locale.  
+Le projet met l’accent sur une **architecture Angular propre**, une **gestion d’état réactive** avec **RxJS / Signals**, et une **expérience utilisateur fluide**.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🚀 Objectifs du projet
+
+- Créer une application musicale simple et fonctionnelle
+- Gérer efficacement les tracks audio locaux
+- Implémenter une architecture maintenable basée sur les bonnes pratiques Angular
+- Utiliser des services pour la gestion d’état (lecteur audio et tracks)
+- Assurer la persistance des données côté client
+
+---
+
+## 🧩 Fonctionnalités principales
+
+### 🎼 Gestion des tracks (CRUD)
+Chaque track contient :
+- Titre de la chanson (max 50 caractères)
+- Nom de l’artiste
+- Description optionnelle (max 200 caractères)
+- Date d’ajout (automatique)
+- Durée (calculée automatiquement)
+- Catégorie musicale (pop, rock, rap, etc.)
+- Fichier audio (MP3, WAV, OGG – max 10MB)
+
+### 📚 Pages principales
+- **Bibliothèque**
+  - Liste complète des tracks
+  - Recherche par titre / artiste
+  - Filtres par catégorie
+- **Page Track**
+  - Détails du track sélectionné
+  - Lecture audio
+- **Lecteur Audio**
+  - Play / Pause
+  - Piste suivante / précédente
+  - Contrôle du volume
+  - Barre de progression
+
+### 🎧 Audio
+- Lecture via **HTMLAudioElement** ou **Web Audio API**
+- Gestion des états du lecteur :
+  - `playing`
+  - `paused`
+  - `buffering`
+  - `stopped`
+
+---
+
+## 🏗️ Architecture & Services
+
+### Services principaux
+
+#### 🎵 AudioPlayerService
+Gestion de l’état du lecteur audio :
+- États réactifs via `BehaviorSubject` ou `Signals`
+- Contrôles : play, pause, next, previous
+- Gestion du volume et de la progression
+
+#### 📀 TrackService
+Gestion des tracks :
+- CRUD complet (Create, Read, Update, Delete)
+- États : `loading`, `success`, `error`
+- Communication avec le `StorageService`
+
+#### 💾 StorageService
+Persistance côté client :
+- Stockage des métadonnées
+- Stockage des fichiers audio
+- Gestion des erreurs de lecture/écriture
+- Implémentation possible avec :
+  - IndexedDB (recommandé)
+  - localStorage / sessionStorage
+
+---
+
+## 📂 Gestion des fichiers audio
+
+- Taille maximale : **10MB**
+- Formats supportés :
+  - MP3
+  - WAV
+  - OGG
+- Validation automatique des fichiers
+- Messages d’erreur UI en cas de problème
+
+---
+
+## ✅ Validations & Gestion d’erreurs
+
+- Validation des champs de formulaire (Reactive Forms)
+- Limites de caractères (titre, description)
+- Validation des formats audio et images
+- Gestion des erreurs de stockage
+- Feedback utilisateur clair selon l’état de l’application
+
+---
+
+## 🧪 Bonus implémentables
+
+- Image de couverture par track (PNG, JPEG)
+- Drag & Drop pour réorganiser les tracks
+- Tests unitaires et d’intégration (Jasmine / Karma)
+- Intégration d’une API de lyrics
+- Dockerisation de l’application
+
+---
+
+## 🛠️ Technologies utilisées
+
+- **Angular 17+**
+- **TypeScript**
+- **RxJS / Observables**
+- **Signals (Angular)**
+- **Reactive Forms**
+- **Angular Routing avec Lazy Loading**
+- **Bootstrap / Tailwind CSS**
+- **IndexedDB / localStorage**
+- **HTMLAudioElement / Web Audio API**
+
+---
+
+## 📦 Installation et lancement
 
 ```bash
+# Installation des dépendances
+npm install
+
+# Lancer le serveur de développement
 ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-# MusicStreames
