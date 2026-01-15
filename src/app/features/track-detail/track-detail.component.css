@@ -16,14 +16,12 @@
 }
 .btn-back:hover { color: white; }
 
-/* Layout: Image + Info cote à cote */
 .track-content {
   display: flex;
   gap: 40px;
   align-items: flex-start;
 }
 
-/* Cover Art */
 .cover-art {
   width: 300px;
   height: 300px;
@@ -36,7 +34,6 @@
 }
 .art-icon { font-size: 6rem; opacity: 0.5; }
 
-/* Info Section */
 .info-section { flex: 1; }
 
 .category-badge {
@@ -115,7 +112,6 @@ input, select, textarea {
 .btn-cancel { background: #3f3f46; color: white; }
 .btn-save { background: #8b5cf6; color: white; }
 
-/* Responsive */
 @media (max-width: 768px) {
   .track-content { flex-direction: column; align-items: center; text-align: center; }
   .cover-art { width: 200px; height: 200px; margin-bottom: 20px; }
