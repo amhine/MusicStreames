@@ -39,7 +39,7 @@ input[type=range] {
 .buttons {
   display: flex;
   align-items: center;
-  gap: 20px; /* L-espace bin buttons */
+  gap: 20px;
   margin-bottom: 8px;
 }
 
