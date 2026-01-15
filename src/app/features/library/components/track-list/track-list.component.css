@@ -1,0 +1,108 @@
+/* Grid System (Mra3at) */
+.track-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive */
+  gap: 24px;
+}
+
+/* Design d La Carte */
+.track-card {
+  background-color: #18181b;
+  border-radius: 12px;
+  padding: 16px;
+  transition: background 0.3s, transform 0.2s;
+  cursor: pointer;
+  position: relative; /* Mohem bach n7ttu l-bouton >> */
+}
+
+.track-card:hover {
+  background-color: #27272a;
+  transform: translateY(-5px);
+}
+
+/* Image Placeholder (Gradient Zwin) */
+.card-image {
+  height: 160px;
+  width: 100%;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #2c3e50, #4ca1af);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  position: relative;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.placeholder-art { font-size: 3rem; opacity: 0.5; }
+
+.duration-badge {
+  position: absolute;
+  top: 8px; right: 8px;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+
+/* Typography */
+.track-title {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 4px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  color: white;
+}
+
+.track-artist {
+  color: #a1a1aa;
+  font-size: 0.875rem;
+  margin-bottom: 12px;
+}
+
+/* Footer (Category + Icons) */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category-pill {
+  background-color: #2a2a30;
+  color: #a1a1aa;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+/* Actions Row (Play + Detail) */
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.icon-btn {
+  border: none;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.icon-btn:hover { transform: scale(1.1); }
+
+/* Bouton Detail (>>) */
+.detail-btn {
+  background: #3f3f46;
+  color: white;
+  font-size: 0.8rem;
+}
+
+/* Bouton Play */
+.play-btn {
+  background: #3b82f6;
+  color: white;
+}

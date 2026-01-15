@@ -1,0 +1,27 @@
+<div class="library-container">
+
+  <div class="library-header">
+    <h1>Ma Bibliothèque</h1>
+    <button class="btn-add" (click)="showUploadModal = true">
+      + Ajouter Piste
+    </button>
+  </div>
+
+  <!-- FILTRES: Kan-chddo search o category hna -->
+  <app-track-filters
+    (search)="onSearch($event)"
+    (category)="onCategoryFilter($event)">
+  </app-track-filters>
+
+  <!-- LISTE: Kan-3tiwha filteredTracks direct -->
+  <app-track-list
+    [tracks]="filteredTracks()"
+    [isLoading]="trackService.loading()">
+  </app-track-list>
+
+</div>
+
+<app-upload-modal
+  *ngIf="showUploadModal"
+  (close)="showUploadModal = false">
+</app-upload-modal>

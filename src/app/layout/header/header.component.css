@@ -1,0 +1,21 @@
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background-color: #121216; /* Chwiya ft7 mn l-fond */
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #a855f7, #ec4899);
+  -webkit-background-clip: text;
+  color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon { font-size: 1.8rem; }

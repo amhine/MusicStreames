@@ -1,0 +1,29 @@
+<!-- Container L-kbir -->
+<div class="filters-container">
+
+  <!-- 1. Search Box -->
+  <div class="search-box">
+    <span class="search-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+    </span>
+    <input
+      type="text"
+      placeholder="Rechercher un titre, un artiste..."
+      [(ngModel)]="searchTerm"
+      (ngModelChange)="onSearchChange()"
+      class="search-input"
+    >
+  </div>
+
+  <!-- 2. Category Select -->
+  <div class="category-box">
+    <select
+      [(ngModel)]="selectedCategory"
+      (change)="onCategoryChange()"
+      class="category-select">
+      <option value="">Toutes les catégories</option>
+      <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
+    </select>
+  </div>
+
+</div>

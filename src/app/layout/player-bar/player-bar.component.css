@@ -1,0 +1,62 @@
+.player-bar {
+  position: fixed;
+  bottom: 0; left: 0;
+  width: 100%;
+  height: 90px;
+  background-color: #121216; /* Dark background */
+  border-top: 1px solid #2a2a2a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  z-index: 1000;
+  color: white;
+  box-sizing: border-box;
+}
+
+.track-info .title { font-weight: bold; }
+.track-info .artist { font-size: 0.8rem; color: #a1a1aa; }
+
+.btn-play {
+  background: white;
+  color: black;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+.btn-play:hover { transform: scale(1.1); }
+
+/* Range Slider Styling (Purple) */
+input[type=range] {
+  accent-color: #8b5cf6; /* Couleur Move */
+  height: 4px;
+  border-radius: 2px;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* L-espace bin buttons */
+  margin-bottom: 8px;
+}
+
+.btn-control {
+  background: transparent;
+  border: none;
+  color: #a1a1aa; /* Gris */
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.btn-control:hover {
+  color: white; /* Byed mli t-survolé */
+}
+
+.btn-play {
+  /* ... Design play l-9dim ... */
+  width: 45px; height: 45px; /* Kbrna chwiya */
+}

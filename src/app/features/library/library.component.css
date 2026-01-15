@@ -1,0 +1,25 @@
+.library-container { padding: 30px; }
+
+.library-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+h1 { font-size: 1.2rem; color: #888; font-weight: normal; }
+
+/* Bouton Add Track bhal l-image */
+.btn-add {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899);
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+  transition: transform 0.2s;
+}
+
+.btn-add:hover { transform: scale(1.05); }

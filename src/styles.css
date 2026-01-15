@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+/* src/styles.css */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif; /* Police moderne */
+  background-color: #0e0e12; /* Loun l-k7el dyal l-fond */
+  color: #ffffff; /* Ketba b lbyed */
+}
+
+/* Scrollbar Zwin */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #0e0e12; }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #555; }

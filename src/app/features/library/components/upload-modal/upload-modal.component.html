@@ -1,0 +1,57 @@
+<div class="modal-overlay">
+  <div class="modal-content">
+    <h2>Ajouter une Musique</h2>
+
+    <form [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
+
+      <!-- Titre -->
+      <div class="form-group">
+        <label>Titre *</label>
+        <input type="text" formControlName="title" placeholder="Titre de la chanson">
+        <small *ngIf="uploadForm.get('title')?.touched && uploadForm.get('title')?.invalid" class="error">
+          Titre requis (max 50 chars)
+        </small>
+      </div>
+
+      <!-- Artiste -->
+      <div class="form-group">
+        <label>Artiste *</label>
+        <input type="text" formControlName="artist" placeholder="Nom de l'artiste">
+      </div>
+
+      <!-- Catégorie -->
+      <div class="form-group">
+        <label>Catégorie</label>
+        <select formControlName="category">
+          <option value="Pop">Pop</option>
+          <option value="Rock">Rock</option>
+          <option value="Rap">Rap</option>
+          <option value="Jazz">Jazz</option>
+          <option value="Classique">Classique</option>
+        </select>
+      </div>
+
+      <!-- Description -->
+      <div class="form-group">
+        <label>Description</label>
+        <textarea formControlName="description" rows="2"></textarea>
+      </div>
+
+      <!-- Fichier Audio -->
+      <div class="form-group file-input">
+        <label>Fichier Audio (Max 10MB) *</label>
+        <input type="file" accept="audio/*" (change)="onFileSelected($event)">
+        <small *ngIf="selectedFile">Fichier sélectionné: {{ selectedFile.name }}</small>
+      </div>
+
+      <!-- Actions -->
+      <div class="modal-actions">
+        <button type="button" class="btn-cancel" (click)="close.emit()">Annuler</button>
+        <button type="submit" class="btn-save" [disabled]="uploadForm.invalid || !selectedFile || isSubmitting">
+          {{ isSubmitting ? 'Enregistrement...' : 'Sauvegarder' }}
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>

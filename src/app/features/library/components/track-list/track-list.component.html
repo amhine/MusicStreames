@@ -1,0 +1,37 @@
+<div class="track-grid">
+
+  <!-- Loading State -->
+  <div *ngIf="isLoading" class="loading">Chargement...</div>
+
+  <!-- La Carte -->
+  <div *ngFor="let track of tracks" class="track-card" (click)="playTrack(track)">
+
+    <!-- Image -->
+    <div class="card-image">
+      <div class="placeholder-art">🎵</div>
+      <span class="duration-badge">{{ track.duration | duration }}</span>
+    </div>
+
+    <!-- Infos -->
+    <div class="card-info">
+      <div class="track-title">{{ track.title }}</div>
+      <div class="track-artist">{{ track.artist }}</div>
+
+      <div class="card-footer">
+        <span class="category-pill">{{ track.category }}</span>
+
+        <div class="actions">
+          <!-- BOUTON DETAIL (>>) -->
+          <!-- stopPropagation: Bach ma y-l3bch l-mussiqa -->
+          <button class="icon-btn detail-btn" (click)="goToDetail($event, track)" title="Voir Détails">
+            ⏩
+          </button>
+
+          <!-- BOUTON PLAY -->
+          <button class="icon-btn play-btn">▶</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

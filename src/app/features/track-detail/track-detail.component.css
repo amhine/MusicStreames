@@ -1,0 +1,123 @@
+.detail-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  color: white;
+}
+
+.btn-back {
+  background: none;
+  border: none;
+  color: #a1a1aa;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-bottom: 30px;
+  transition: color 0.2s;
+}
+.btn-back:hover { color: white; }
+
+/* Layout: Image + Info cote à cote */
+.track-content {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* Cover Art */
+.cover-art {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+}
+.art-icon { font-size: 6rem; opacity: 0.5; }
+
+/* Info Section */
+.info-section { flex: 1; }
+
+.category-badge {
+  background: #27272a;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #a1a1aa;
+}
+
+.title { font-size: 3rem; margin: 15px 0 5px; line-height: 1.1; }
+.artist { font-size: 1.5rem; color: #a1a1aa; font-weight: normal; margin-bottom: 20px; }
+
+.meta-row {
+  display: flex;
+  gap: 20px;
+  color: #71717a;
+  margin-bottom: 30px;
+}
+
+.description {
+  background: #18181b;
+  padding: 20px;
+  border-radius: 8px;
+  line-height: 1.6;
+  color: #d4d4d8;
+  margin-bottom: 30px;
+}
+
+/* Actions Buttons */
+.actions-row { display: flex; gap: 15px; }
+
+button {
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+button:active { transform: scale(0.98); }
+
+.btn-play-big { background: #1db954; color: white; font-size: 1.1rem; }
+.btn-edit { background: #3f3f46; color: white; }
+.btn-delete { background: #ef4444; color: white; }
+.btn-delete:hover { background: #dc2626; }
+
+/* --- EDIT FORM STYLING --- */
+.edit-section {
+  background: #18181b;
+  padding: 30px;
+  border-radius: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group { margin-bottom: 20px; }
+label { display: block; margin-bottom: 8px; color: #a1a1aa; }
+
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  background: #27272a;
+  border: 1px solid #3f3f46;
+  border-radius: 8px;
+  color: white;
+  box-sizing: border-box;
+}
+.loading-state, .not-found {
+  text-align: center;
+  padding: 50px;
+  color: white;
+}
+.edit-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px; }
+.btn-cancel { background: #3f3f46; color: white; }
+.btn-save { background: #8b5cf6; color: white; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .track-content { flex-direction: column; align-items: center; text-align: center; }
+  .cover-art { width: 200px; height: 200px; margin-bottom: 20px; }
+  .actions-row { justify-content: center; }
+}

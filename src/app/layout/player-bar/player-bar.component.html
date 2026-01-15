@@ -1,0 +1,65 @@
+<!-- Ban ghir ila kaina oghniya (currentTrack machi null) -->
+<div class="player-bar" *ngIf="playerService.currentTrack()">
+
+  <!-- 1. Infos (Tsswira + Titre) -->
+  <div class="track-info">
+    <div class="info-text">
+      <div class="title">{{ playerService.currentTrack()?.title }}</div>
+      <div class="artist">{{ playerService.currentTrack()?.artist }}</div>
+    </div>
+  </div>
+
+  <!-- 2. Contrôles (Play/Pause + Barre Progression) -->
+  <!-- ... -->
+  <div class="controls">
+    <div class="buttons">
+
+      <!-- PREVIOUS -->
+      <button class="btn-control" (click)="playerService.previous()">
+        ⏮
+      </button>
+
+      <!-- PLAY / PAUSE -->
+      <button class="btn-play" (click)="playerService.togglePlay()">
+        {{ playerService.state() === 'playing' ? '⏸' : '▶' }}
+      </button>
+
+      <!-- NEXT -->
+      <button class="btn-control" (click)="playerService.next()">
+        ⏭
+      </button>
+
+    </div>
+    <!-- ... -->
+
+    <div class="progress-container">
+      <!-- Wa9t daze -->
+      <span class="time">{{ playerService.currentTime() | duration }}</span>
+
+      <!-- L-Barre (Slider) -->
+      <input
+        type="range"
+        class="seek-slider"
+        min="0"
+        [max]="playerService.duration()"
+        [value]="playerService.currentTime()"
+        (input)="onSeek($event)">
+
+      <!-- Wa9t Ijimali -->
+      <span class="time">{{ playerService.duration() | duration }}</span>
+    </div>
+  </div>
+
+  <!-- 3. Volume -->
+  <div class="volume-control">
+    <span>🔊</span>
+    <input
+      type="range"
+      min="0"
+      max="1"
+      step="0.01"
+      [value]="playerService.volume()"
+      (input)="onVolumeChange($event)">
+  </div>
+
+</div>
