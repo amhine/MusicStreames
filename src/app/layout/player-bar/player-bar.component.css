@@ -3,7 +3,7 @@
   bottom: 0; left: 0;
   width: 100%;
   height: 90px;
-  background-color: #121216; /* Dark background */
+  background-color: #121216;
   border-top: 1px solid #2a2a2a;
   display: flex;
   align-items: center;
@@ -29,9 +29,8 @@
 }
 .btn-play:hover { transform: scale(1.1); }
 
-/* Range Slider Styling (Purple) */
 input[type=range] {
-  accent-color: #8b5cf6; /* Couleur Move */
+  accent-color: #8b5cf6;
   height: 4px;
   border-radius: 2px;
 }
@@ -46,17 +45,16 @@ input[type=range] {
 .btn-control {
   background: transparent;
   border: none;
-  color: #a1a1aa; /* Gris */
+  color: #a1a1aa;
   font-size: 1.5rem;
   cursor: pointer;
   transition: color 0.2s;
 }
 
 .btn-control:hover {
-  color: white; /* Byed mli t-survolé */
+  color: white;
 }
 
 .btn-play {
-  /* ... Design play l-9dim ... */
-  width: 45px; height: 45px; /* Kbrna chwiya */
+  width: 45px; height: 45px;
 }
