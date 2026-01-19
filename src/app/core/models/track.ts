@@ -2,11 +2,11 @@ export interface Track {
   id?: number;
   title: string;
   artist: string;
-  description?: string; // Zdna hada
+  description?: string;
   album?: string;
   category: string;
   file: Blob;
-  cover?: Blob | null;  // <-- Hada howa li kan na9ss
+  cover?: Blob | null;
   duration: number;
   dateAdded: Date;
 }

@@ -11,10 +11,10 @@ import { FormsModule } from '@angular/forms';
 })
 export class TrackFiltersComponent {
   @Output() search = new EventEmitter<string>();
-  @Output() category = new EventEmitter<string>(); // Event jdid
+  @Output() category = new EventEmitter<string>();
 
   searchTerm: string = '';
-  selectedCategory: string = ''; // 'All' hiya vide
+  selectedCategory: string = '';
 
   categories = ['Pop', 'Rock', 'Rap', 'Jazz', 'Classique', 'Electro'];
 

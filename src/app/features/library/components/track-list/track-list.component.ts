@@ -1,8 +1,6 @@
-// VERSION CORRECTE 100%
 import { Component, Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Router } from '@angular/router';
-// HNA L-FIX: 4 dyal ../
 import { Track } from '../../../../core/models/track';
 import { AudioPlayerService } from '../../../../core/services/audio-player.service';
 import { DurationPipe } from '../../../../shared/pipes/duration.pipe';

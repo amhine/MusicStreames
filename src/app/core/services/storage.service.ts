@@ -12,7 +12,7 @@ interface MusicDB extends DBSchema {
 @Injectable({
   providedIn: 'root'
 })
-export class StorageService { // <-- T2kdi anna export class kayna
+export class StorageService {
   private dbPromise: Promise<IDBPDatabase<MusicDB>>;
 
   constructor() {

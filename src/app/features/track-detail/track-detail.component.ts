@@ -18,12 +18,11 @@ import { DurationPipe } from '../../shared/pipes/duration.pipe';
 export class TrackDetailComponent implements OnInit {
   track: Track | undefined;
   isEditing = false;
-  isLoading = true; // <-- Zidna hadi bach ma ybanch "Introuvable" bzerba
-
+  isLoading = true;
   private trackService = inject(TrackService);
   private playerService = inject(AudioPlayerService);
   private router = inject(Router);
-  private route = inject(ActivatedRoute); // <-- Injectina Route
+  private route = inject(ActivatedRoute);
   private location = inject(Location);
   private fb = inject(FormBuilder);
 
@@ -40,12 +39,8 @@ export class TrackDetailComponent implements OnInit {
     const idFromUrl = this.route.snapshot.paramMap.get('id');
 
     if (idFromUrl) {
-      // Jib Data
       this.track = await this.trackService.getTrackById(Number(idFromUrl));
-
-      // 3. FEYYEQ ANGULAR! (Force Update)
-      // Hada howa l-7ell dyal mouchkil "Introuvable" wakha data kayna
-      this.isLoading = false;
+  this.isLoading = false;
       this.cdr.detectChanges();
     } else {
       this.isLoading = false;
@@ -98,7 +93,7 @@ export class TrackDetailComponent implements OnInit {
       await this.trackService.updateTrack(updatedTrack);
       this.track = updatedTrack;
       this.isEditing = false;
-      this.cdr.detectChanges(); // Update ta hna
+      this.cdr.detectChanges();
     }
   }
 }

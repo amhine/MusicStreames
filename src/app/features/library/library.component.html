@@ -7,13 +7,11 @@
     </button>
   </div>
 
-  <!-- FILTRES: Kan-chddo search o category hna -->
   <app-track-filters
     (search)="onSearch($event)"
     (category)="onCategoryFilter($event)">
   </app-track-filters>
 
-  <!-- LISTE: Kan-3tiwha filteredTracks direct -->
   <app-track-list
     [tracks]="filteredTracks()"
     [isLoading]="trackService.loading()">

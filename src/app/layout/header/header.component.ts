@@ -6,8 +6,7 @@ import { RouterModule } from '@angular/router';
   selector: 'app-header',
   standalone: true,
   imports: [CommonModule, RouterModule],
-  templateUrl: './header.component.html', // T2kdi mn hadi
-  styleUrls: ['./header.component.css']   // T2kdi mn hadi
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.css']
 })
-// L-mohim: Zidi 'Component' f lkhher d smya
 export class HeaderComponent {}

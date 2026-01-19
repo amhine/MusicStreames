@@ -8,7 +8,6 @@ import { Track } from '../models/track';
 export class TrackService {
   private storage = inject(StorageService);
 
-  // State
   tracks = signal<Track[]>([]);
   loading = signal<boolean>(false);
   error = signal<string | null>(null);
@@ -46,7 +45,7 @@ export class TrackService {
     this.loading.set(true);
     try {
       await this.storage.updateTrack(track);
-      await this.loadTracks(); // Refresh la liste globale
+      await this.loadTracks();
     } catch (err) {
       console.error("Erreur update:", err);
       this.error.set("Impossible de modifier");
@@ -59,8 +58,8 @@ export class TrackService {
   async deleteTrack(id: number) {
     this.loading.set(true);
     try {
-      await this.storage.deleteTrack(id); // Supprimer mn DB
-      await this.loadTracks(); // Refresh l-liste
+      await this.storage.deleteTrack(id);
+      await this.loadTracks();
     } catch (err) {
       console.error(err);
       this.error.set("Erreur lors de la suppression");

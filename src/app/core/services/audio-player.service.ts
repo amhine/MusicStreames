@@ -8,7 +8,6 @@ import { AudioState, PlayerState } from '../models/player-state';
 export class AudioPlayerService {
   private audio = new Audio();
 
-  // State Signals
   state = signal<AudioState>('stopped');
   currentTrack = signal<Track | null>(null);
   currentTime = signal<number>(0);
@@ -31,8 +30,6 @@ export class AudioPlayerService {
   }
 
   playTrack(track: Track) {
-    // Ila playlist khawya (awel mara), 3mmrha mn TrackService (ghadi ndiroha f UI)
-    // Walakin l-afdal n-setiw playlist mli n-clickiw play
     this._playFile(track);
   }
 
@@ -63,7 +60,6 @@ export class AudioPlayerService {
     if (!current || list.length === 0) return;
 
     const currentIndex = list.findIndex(t => t.id === current.id);
-    // Ila wsslna l-lkher, rje3 l-awel (Loop)
     const nextIndex = (currentIndex + 1) % list.length;
 
     this._playFile(list[nextIndex]);
@@ -75,7 +71,6 @@ export class AudioPlayerService {
     if (!current || list.length === 0) return;
 
     const currentIndex = list.findIndex(t => t.id === current.id);
-    // Ila kna f l-awel, sir l-lkher
     const prevIndex = (currentIndex - 1 + list.length) % list.length;
 
     this._playFile(list[prevIndex]);

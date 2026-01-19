@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Output, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-// Correction path (4 d ../ machi 5)
 import { TrackService } from '../../../../core/services/track.service';
 import { Track } from '../../../../core/models/track';
 import { fileSizeValidator } from '../../../../shared/utils/validators';
@@ -17,7 +16,7 @@ export class UploadModalComponent {
   @Output() close = new EventEmitter<void>();
 
   private fb = inject(FormBuilder);
-  trackService = inject(TrackService); // Rdditha public bach HTML ychoufha
+  trackService = inject(TrackService);
 
   isSubmitting = false;
   selectedFile: File | null = null;
@@ -28,7 +27,7 @@ export class UploadModalComponent {
     artist: ['', Validators.required],
     description: ['', Validators.maxLength(200)],
     category: ['Pop', Validators.required],
-    file: [null] // Validator hna optional ila drtih manuel
+    file: [null]
   });
 
   onFileSelected(event: any) {
@@ -52,8 +51,8 @@ export class UploadModalComponent {
       description: this.uploadForm.value.description || '',
       category: this.uploadForm.value.category!,
       file: this.selectedFile,
-      cover: this.selectedCover, // Hada daba m3rref f Model
-      duration: 0, // Duration drnaha 0 db bach nzerbo
+      cover: this.selectedCover,
+      duration: 0,
       dateAdded: new Date()
     };
 

@@ -64,7 +64,6 @@
   margin-bottom: 30px;
 }
 
-/* Actions Buttons */
 .actions-row { display: flex; gap: 15px; }
 
 button {
@@ -82,7 +81,6 @@ button:active { transform: scale(0.98); }
 .btn-delete { background: #ef4444; color: white; }
 .btn-delete:hover { background: #dc2626; }
 
-/* --- EDIT FORM STYLING --- */
 .edit-section {
   background: #18181b;
   padding: 30px;

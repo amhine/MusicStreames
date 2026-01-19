@@ -22,24 +22,19 @@ export class LibraryComponent {
 
   showUploadModal = false;
 
-  // Signals pour gérer les filtres
   searchQuery = signal<string>('');
   selectedCategory = signal<string>('');
 
-  // Hada howa l-intelligence: Computed Signal
-  // Kay-calculé l-liste jdid auto mli ki tbdl search ola category ola tracks
   filteredTracks = computed(() => {
     const allTracks = this.trackService.tracks();
     const query = this.searchQuery().toLowerCase();
     const cat = this.selectedCategory();
 
     return allTracks.filter(track => {
-      // 1. Vérifier Recherche (Titre ou Artiste)
       const matchesSearch =
         track.title.toLowerCase().includes(query) ||
         track.artist.toLowerCase().includes(query);
 
-      // 2. Vérifier Catégorie (Ila kant vide, dwez kolchi)
       const matchesCategory = cat === '' || track.category === cat;
 
       return matchesSearch && matchesCategory;

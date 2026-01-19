@@ -1,14 +1,9 @@
-<!-- Zidna isLoading hna -->
 <div class="detail-container" *ngIf="!isLoading; else loadingTpl">
 
-  <!-- Ila Track kayn -->
   <div *ngIf="track; else notFound">
-    <!-- ... l-code l-9dim kaml dyal track-content ... -->
-    <!-- ... copier content l-9dim hna ... -->
     <button class="btn-back" (click)="goBack()">← Retour</button>
 
     <div class="track-content" *ngIf="!isEditing">
-      <!-- ... code d l-affichage ... -->
       <div class="cover-art"><div class="art-icon">🎵</div></div>
       <div class="info-section">
         <span class="category-badge">{{ track.category }}</span>
@@ -26,12 +21,9 @@
       </div>
     </div>
 
-    <!-- Vue Modification -->
     <div class="edit-section" *ngIf="isEditing">
-      <!-- ... code formulaire (kif ma kan) ... -->
       <h2>Modifier</h2>
       <form [formGroup]="editForm" (ngSubmit)="saveEdit()">
-        <!-- Inputs ... -->
         <div class="form-group"><label>Titre</label><input formControlName="title"></div>
         <div class="form-group"><label>Artiste</label><input formControlName="artist"></div>
         <div class="form-group">
@@ -53,7 +45,6 @@
 
 </div>
 
-<!-- Templates sghar lta7t -->
 <ng-template #loadingTpl>
   <div class="loading-state">
     <h2>Chargement en cours... ⏳</h2>

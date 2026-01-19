@@ -1,18 +1,16 @@
-/* Container: Flexbox bach yjiw f ster wa7d */
 .filters-container {
   display: flex;
   align-items: center;
-  gap: 16px; /* L-espace binathom */
+  gap: 16px;
   margin-bottom: 30px;
-  flex-wrap: wrap; /* Ila kant ecran sghira, yhbto */
-  background: #18181b; /* Background gris fonce bach yban mzn */
+  flex-wrap: wrap;
+  background: #18181b;
   padding: 10px;
   border-radius: 12px;
 }
 
-/* --- Search Box Styling --- */
 .search-box {
-  flex: 1; /* Search ghadi y-telle9 bach y-3mmer l-khwa */
+  flex: 1;
   position: relative;
   min-width: 250px;
 }
@@ -21,7 +19,7 @@
   position: absolute;
   left: 14px;
   top: 50%;
-  transform: translateY(-50%); /* Center vertical */
+  transform: translateY(-50%);
   color: #a1a1aa;
   display: flex;
   align-items: center;
@@ -29,25 +27,24 @@
 
 .search-input {
   width: 100%;
-  padding: 12px 16px 12px 45px; /* Padding lisser zayed 3la wed l-icon */
+  padding: 12px 16px 12px 45px;
   background-color: #27272a;
   border: 1px solid #3f3f46;
   border-radius: 8px;
   color: white;
   font-size: 0.95rem;
   transition: all 0.2s;
-  box-sizing: border-box; /* Mohem */
+  box-sizing: border-box;
 }
 
 .search-input:focus {
   outline: none;
-  border-color: #8b5cf6; /* Couleur Move */
+  border-color: #8b5cf6;
   background-color: #202023;
 }
 
-/* --- Category Styling --- */
 .category-box {
-  min-width: 200px; /* 3rd minimal */
+  min-width: 200px;
 }
 
 .category-select {
@@ -59,8 +56,7 @@
   color: white;
   font-size: 0.95rem;
   cursor: pointer;
-  appearance: none; /* Bach n-7kmou f design 100% */
-  /* Petite icone de flèche (Optionnel, sinon khlliha default) */
+  appearance: none;
   background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
   background-repeat: no-repeat;
   background-position: right .7em top 50%;
@@ -72,10 +68,9 @@
   border-color: #8b5cf6;
 }
 
-/* Responsive: Ila kan tel sghir */
 @media (max-width: 600px) {
   .filters-container {
-    flex-direction: column; /* Ywelli wa7d fo9 wa7d */
+    flex-direction: column;
     align-items: stretch;
   }
 }
